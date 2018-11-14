@@ -17,12 +17,12 @@ public class triggerPuzzle : MonoBehaviour {
    
     }
 
-    void getCubeNumber(Collider objectType)
+    void getCubeNumber(int correctAnswer, Collider objectType)
     {
 
         int number = System.Int32.Parse(objectType.gameObject.name); //7 
 
-        if (number == 7)
+        if (number == correctAnswer)
         {
             Debug.Log(number);
             message = number + " Is correct";
@@ -42,13 +42,39 @@ public class triggerPuzzle : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+
+        Debug.Log(this.gameObject.name);
+
+      
         //Do door open animation script.
         if(other.tag == "placeable")
         {
-            getCubeNumber(other);
+         
 
+            if (this.gameObject.name == "TriggerSeven")
+            {
+                Debug.Log("Yeahh 7");
+                getCubeNumber(7,other);
+            }
 
-            
+            if (this.gameObject.name == "TriggerFive")
+            {
+                Debug.Log("Yeahh 5");
+                getCubeNumber(5, other);
+            }
+
+            if (this.gameObject.name == "TriggerFour")
+            {
+                Debug.Log("Yeahh 4");
+                getCubeNumber(4, other);
+            }
+
+            if (this.gameObject.name == "TriggerNine")
+            {
+                Debug.Log("Yeahh 9");
+                getCubeNumber(9, other);
+            }
+
         }
     }
 
