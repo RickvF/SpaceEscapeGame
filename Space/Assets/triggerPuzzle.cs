@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class trigger : MonoBehaviour {
+public class triggerPuzzle : MonoBehaviour {
 
     private float minWeight = 75.0f;
     private float weightOnTrigger = 0.0f;
