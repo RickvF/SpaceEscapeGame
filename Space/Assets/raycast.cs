@@ -27,6 +27,8 @@ public class raycast : MonoBehaviour {
             {
                 heldObject.transform.parent = null;
                 heldObject.GetComponent<Rigidbody>().isKinematic = false;
+                Debug.Log("X: " + this.gameObject.transform.GetChild(0).transform.eulerAngles.x + " Y: " +  this.transform.eulerAngles.y);
+                heldObject.GetComponent<Rigidbody>().AddForce(new Vector3(this.gameObject.transform.GetChild(0).transform.rotation.x, this.transform.rotation.y) * 50, ForceMode.VelocityChange);
                 heldObject = null;
                 itemHeld = false;
                 return;

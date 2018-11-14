@@ -22,6 +22,10 @@ public class CancelGravity : MonoBehaviour {
             Debug.Log(other.name);
             other.GetComponent<FirstPersonController>().SetGravity(0);
         }
+        if(other.tag == "placeable")
+        {
+            other.attachedRigidbody.useGravity = false;
+        }
 
     }
 }
