@@ -7,6 +7,7 @@ TagManager:
   - Fire
   - Button
   - placeable
+  - seven
   layers:
   - Default
   - TransparentFX

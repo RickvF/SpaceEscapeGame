@@ -23,7 +23,7 @@ public class trigger : MonoBehaviour {
         //Do door open animation script.
         if(other.tag == "placeable")
         {
-            weightOnTrigger += other.gameObject.GetComponent<Rigidbody>().mass;
+          
             Debug.Log(weightOnTrigger);
             percentageWeight = (weightOnTrigger / minWeight) * 100;
             Debug.Log(percentageWeight);

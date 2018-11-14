@@ -1,18 +1,40 @@
 ﻿using System.Collections;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class triggerPuzzle : MonoBehaviour {
 
-    private float minWeight = 75.0f;
-    private float weightOnTrigger = 0.0f;
+    // private int correctNumber = 7;
+    //private int numberOnTrigger = 0;
 
-    public float percentageWeight = 0.0f;
+        public Text MessageMath;
+        private string message;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+
+    // Use this for initialization
+    void Start() {
+   
+    }
+
+    void getCubeNumber(Collider objectType)
+    {
+
+        int number = System.Int32.Parse(objectType.gameObject.name); //7 
+
+        if (number == 7)
+        {
+            Debug.Log(number);
+            message = number + " Is correct";
+            setMessage();
+        } else
+        {
+            Debug.Log(number + "  Is the Wrong number do you even math??");
+
+            message = number + " Is the Wrong number do you even math??";
+            setMessage();
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,11 +45,17 @@ public class triggerPuzzle : MonoBehaviour {
         //Do door open animation script.
         if(other.tag == "placeable")
         {
-            weightOnTrigger += other.gameObject.GetComponent<Rigidbody>().mass;
-            Debug.Log(weightOnTrigger);
-            percentageWeight = (weightOnTrigger / minWeight) * 100;
-            Debug.Log(percentageWeight);
+            getCubeNumber(other);
+
+
+            
         }
+    }
+
+    void setMessage()
+    {
+        MessageMath.text = message.ToString();
+
     }
 
 
@@ -36,10 +64,8 @@ public class triggerPuzzle : MonoBehaviour {
         //Do door close animation script.
         if (other.tag == "placeable")
         {
-            weightOnTrigger -= other.gameObject.GetComponent<Rigidbody>().mass;
-            Debug.Log(weightOnTrigger);
-            percentageWeight = (weightOnTrigger / minWeight) * 100;
-            Debug.Log(percentageWeight);
+         
+          // Debug.Log(numberOnTrigger);
         }
     }
 }

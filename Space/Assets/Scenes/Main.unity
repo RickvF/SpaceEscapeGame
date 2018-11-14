@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 34274176}
   - component: {fileID: 34274175}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: 9
   m_TagString: placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 116949394}
   - component: {fileID: 116949393}
   m_Layer: 0
-  m_Name: Cube (8)
+  m_Name: 6
   m_TagString: placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1376,7 +1376,7 @@ GameObject:
   - component: {fileID: 513368961}
   - component: {fileID: 513368960}
   m_Layer: 0
-  m_Name: seven
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1607,7 +1607,7 @@ GameObject:
   - component: {fileID: 606309509}
   - component: {fileID: 606309508}
   m_Layer: 0
-  m_Name: Cube (5)
+  m_Name: 5
   m_TagString: placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1695,6 +1695,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &623861658 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1933370284055614, guid: 67238db015222824b81a261af1e027c9,
+    type: 2}
+  m_PrefabInternal: {fileID: 751172719}
+--- !u!114 &623861660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 623861658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e754964781462b4ca43cc9b80a7e8be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MessageMath: {fileID: 1421571144}
 --- !u!1001 &675090639
 Prefab:
   m_ObjectHideFlags: 0
@@ -1991,7 +2008,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.4795219
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114568306687089330, guid: 67238db015222824b81a261af1e027c9, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 67238db015222824b81a261af1e027c9, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &766994918
@@ -2108,7 +2126,7 @@ GameObject:
   - component: {fileID: 875174165}
   - component: {fileID: 875174164}
   m_Layer: 0
-  m_Name: Cube (7)
+  m_Name: 1
   m_TagString: placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3358,6 +3376,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1421571142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1421571143}
+  - component: {fileID: 1421571145}
+  - component: {fileID: 1421571144}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1421571143
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1421571142}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -654}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1738828925}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &1421571144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1421571142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 15
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 1
+    m_MaxSize: 100
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Solve this math problem
+--- !u!222 &1421571145
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1421571142}
 --- !u!1 &1435689498
 GameObject:
   m_ObjectHideFlags: 0
@@ -3730,7 +3822,7 @@ GameObject:
   - component: {fileID: 1692626924}
   - component: {fileID: 1692626923}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: 4
   m_TagString: placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3916,7 +4008,7 @@ GameObject:
   - component: {fileID: 1712684440}
   - component: {fileID: 1712684439}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: 7
   m_TagString: placeable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4131,6 +4223,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 74416793}
+  - {fileID: 1421571143}
   m_Father: {fileID: 268978502}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
