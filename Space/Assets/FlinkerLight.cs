@@ -5,6 +5,8 @@ using UnityEngine;
 public class FlinkerLight : MonoBehaviour {
 
     public Light celLight;
+    public GameObject celDoor;
+
     private int duration = 100;
     private float waitTime = 0.3f;
 
@@ -28,5 +30,6 @@ public class FlinkerLight : MonoBehaviour {
         }
 
         celLight.enabled = false;
+        celDoor.GetComponent<autoOpenDoor>().OpenDoor();
     }
 }
