@@ -10,29 +10,34 @@ public class triggerPuzzle : MonoBehaviour {
 
         public Text MessageMath;
         private string message;
+    // private  List<int> collectionCubes = new List<int>();
+    public Cube cubes;
 
 
     // Use this for initialization
     void Start() {
-   
+        cubes = new Cube();
+
     }
 
-    void getCubeNumber(int correctAnswer, Collider objectType)
+    void getCubeNumber(int correctAnswer,int secondCorrectAnswer, Collider objectType)
     {
 
-        int number = System.Int32.Parse(objectType.gameObject.name); //7 
+        int number = System.Int32.Parse(objectType.gameObject.name);
 
-        if (number == correctAnswer)
+    
+        if (number == correctAnswer || number == secondCorrectAnswer)
         {
             Debug.Log(number);
-            message = number + " Is correct";
+            message = number + " is correct";
             setMessage();
+            cubes.Update();
         } else
         {
-            Debug.Log(number + "  Is the Wrong number do you even math??");
 
-            message = number + " Is the Wrong number do you even math??";
+            message = number + " is the Wrong number do you even math??";
             setMessage();
+          
         }
     }
 	
@@ -40,10 +45,12 @@ public class triggerPuzzle : MonoBehaviour {
 	void Update () {
     }
 
+    
+
     void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log(this.gameObject.name);
+        // Debug.Log(this.gameObject.name);
 
       
         //Do door open animation script.
@@ -53,26 +60,27 @@ public class triggerPuzzle : MonoBehaviour {
 
             if (this.gameObject.name == "TriggerSeven")
             {
-                Debug.Log("Yeahh 7");
-                getCubeNumber(7,other);
+            
+                getCubeNumber(7,5,other);
+
             }
 
             if (this.gameObject.name == "TriggerFive")
             {
-                Debug.Log("Yeahh 5");
-                getCubeNumber(5, other);
+          
+                getCubeNumber(5,7, other);
             }
 
             if (this.gameObject.name == "TriggerFour")
             {
-                Debug.Log("Yeahh 4");
-                getCubeNumber(4, other);
+  
+                getCubeNumber(4,9, other);
             }
 
             if (this.gameObject.name == "TriggerNine")
             {
-                Debug.Log("Yeahh 9");
-                getCubeNumber(9, other);
+
+                getCubeNumber(9,4, other);
             }
 
         }
