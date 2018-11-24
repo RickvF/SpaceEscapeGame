@@ -1,0 +1,18 @@
+UI - Unity Samples - UNITY TECHNOLOGIES
+
+SKYBOX - Milky Way Skybox - ADAM BIELECKI
+       - Space Graphics Basic Pack - CARLOS WILKES
+
+GUNS - PM-40 Gun - HELICA
+	 - Ammo Box - BEATHEART CREATIVE STUDIO
+	 - Sci-Fi Gun Light - FACTORY OF MODELS
+
+PROPS - Old Military Bed - NEXT LEVEL 3D
+	  - Sci-Fi Door - 3DMONDRA
+	  - Low-Poly Sink And Toilet - DEPLOYER
+
+TEXTURE PACK - Sci-Fi Texture Pack 1 - FIREBOLT STUDIO
+
+SPACECRAFT - Oxar Light Freighter - FIREBOLT STUDIO
+		   - Sci-Fi Scout Drone - DOTTEAM
+
