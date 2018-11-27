@@ -8,10 +8,13 @@ public class Raycast : MonoBehaviour {
     // Use this for initialization
     public Camera camera;
     public GameObject hand;
+    public GameObject door;
+
     private static GameObject heldObject;
     private bool itemHeld;
     private float objectDist = -0.1f;
     private float pickUpDist = 3.0f;
+
     void Start()
     {
 
@@ -37,18 +40,21 @@ public class Raycast : MonoBehaviour {
                 if (hit.collider.tag == "Button")
                 {
                     Debug.Log(hit.collider.gameObject.name);
-                    //switch (hit.collider.gameObject.name)
-                    //{
-                    //    case "Button_0.5":
-                    //        this.GetComponent<FirstPersonController>().SetGravity(0.5f);
-                    //        break;
-                    //    case "Button_1":
-                    //        this.GetComponent<FirstPersonController>().SetGravity(1f);
-                    //        break;
-                    //    case "Button_0.25":
-                    //        this.GetComponent<FirstPersonController>().SetGravity(0.25f);
-                    //        break;
-                    //}
+                    switch (hit.collider.gameObject.name)
+                    {
+                        case "ButtonDoorZone2":
+                            door.GetComponent<autoOpenDoor>().open();
+                            break;
+                        case "Button_0.5":
+                            this.GetComponent<FirstPersonController>().SetGravity(1f);
+                            break;
+                        case "Button_1":
+                            this.GetComponent<FirstPersonController>().SetGravity(2f);
+                            break;
+                        case "Button_0.25":
+                            this.GetComponent<FirstPersonController>().SetGravity(0.5f);
+                            break;
+                    }
                 }
                 else if (hit.collider.tag == "placeable")
                 {

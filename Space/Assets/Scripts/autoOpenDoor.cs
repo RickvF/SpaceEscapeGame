@@ -18,5 +18,6 @@ public class autoOpenDoor : MonoBehaviour {
     {
         this.GetComponent<MeshCollider>().enabled = false;
         this.GetComponent<BoxCollider>().enabled = false;
+        this.GetComponent<MeshRenderer>().enabled = false;
     }
 }

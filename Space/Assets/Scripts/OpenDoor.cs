@@ -10,8 +10,8 @@ public class OpenDoor : MonoBehaviour
 
     public GameObject trigger;
 
-    private float defaultHeight = -1.24f;
-    private float maxHeight = 3.82f;
+    private float defaultHeight = 0.0f;
+    private float maxHeight = 4.5f;
 
     private int waitCounter = 50;
 
@@ -25,14 +25,18 @@ public class OpenDoor : MonoBehaviour
     void Update()
     {
         doorHeight = trigger.GetComponent<trigger>().percentageWeight / 10;
+        doorHeight = ((maxHeight - defaultHeight) / 10) * doorHeight;
+        //Debug.Log("Door: "  + doorHeight + " real: " + this.transform.position.y);
+        
         waitCounter++;
         if (this.transform.position.y != (defaultHeight + doorHeight) && waitCounter > 5)
         {
-            if (this.transform.position.y < (defaultHeight + doorHeight))
+            //Debug.Log("Both: "  + (defaultHeight + doorHeight));
+            if (this.transform.position.y < ((defaultHeight + doorHeight) - 0.5f))
             {
                 this.transform.SetPositionAndRotation(new Vector3(this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z), this.transform.rotation);
             }
-            else if (this.transform.position.y > (defaultHeight + doorHeight))
+            else if (this.transform.position.y > ((defaultHeight + doorHeight) + 0.5f))
             {
                 this.transform.SetPositionAndRotation(new Vector3(this.transform.position.x, this.transform.position.y - 0.1f, this.transform.position.z), this.transform.rotation);
             }

@@ -158,8 +158,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             PlayFootStepAudio();
         }
+        public void SetGravity(float number)
+        {
+            Debug.Log("Set gravity to " + number);
+            m_GravityMultiplier = number;
+        }
 
-
+        public float GetGravity()
+        {
+            return m_GravityMultiplier;
+        }
         private void PlayFootStepAudio()
         {
             if (!m_CharacterController.isGrounded)
