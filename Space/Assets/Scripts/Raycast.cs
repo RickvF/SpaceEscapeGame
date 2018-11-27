@@ -60,7 +60,6 @@ public class Raycast : MonoBehaviour {
                 {
                     if (!itemHeld)
                     {
-                        Debug.Log("PICKUP");
                         heldObject = hit.collider.gameObject;
                         heldObject.transform.parent = hand.transform;
                         heldObject.GetComponent<Rigidbody>().isKinematic = true;

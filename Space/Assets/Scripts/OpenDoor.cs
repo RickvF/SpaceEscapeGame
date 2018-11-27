@@ -32,11 +32,11 @@ public class OpenDoor : MonoBehaviour
         if (this.transform.position.y != (defaultHeight + doorHeight) && waitCounter > 2)
         {
             //Debug.Log("Both: "  + (defaultHeight + doorHeight));
-            if (this.transform.position.y < ((defaultHeight + doorHeight) - 0.5f))
+            if (this.transform.position.y < ((defaultHeight + doorHeight) - 0.1f))
             {
                 this.transform.SetPositionAndRotation(new Vector3(this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z), this.transform.rotation);
             }
-            else if (this.transform.position.y > ((defaultHeight + doorHeight) + 0.5f))
+            else if (this.transform.position.y > ((defaultHeight + doorHeight) + 0.1f))
             {
                 this.transform.SetPositionAndRotation(new Vector3(this.transform.position.x, this.transform.position.y - 0.1f, this.transform.position.z), this.transform.rotation);
             }
