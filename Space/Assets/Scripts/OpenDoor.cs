@@ -13,7 +13,7 @@ public class OpenDoor : MonoBehaviour
     private float defaultHeight = 0.0f;
     private float maxHeight = 4.5f;
 
-    private int waitCounter = 50;
+    private int waitCounter = 10;
 
     // Use this for initialization
     void Start()
@@ -29,7 +29,7 @@ public class OpenDoor : MonoBehaviour
         //Debug.Log("Door: "  + doorHeight + " real: " + this.transform.position.y);
         
         waitCounter++;
-        if (this.transform.position.y != (defaultHeight + doorHeight) && waitCounter > 5)
+        if (this.transform.position.y != (defaultHeight + doorHeight) && waitCounter > 2)
         {
             //Debug.Log("Both: "  + (defaultHeight + doorHeight));
             if (this.transform.position.y < ((defaultHeight + doorHeight) - 0.5f))
