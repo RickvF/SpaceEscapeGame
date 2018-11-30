@@ -6,11 +6,18 @@ using UnityEngine;
 public class triggerPuzzle : MonoBehaviour {
     
     public Cube cubes;
+    public GameObject button;
+    public textUpdater textUpdater;
 
+    private Material correctMaterial;
+    private Material wrongMaterial;
+    private Material defaultMaterial;
 
     // Use this for initialization
     void Start() {
-
+        correctMaterial = Resources.Load<Material>("Materials/correctNumberMaterial") as Material;
+        wrongMaterial = Resources.Load<Material>("Materials/wrongNumberMaterial") as Material;
+        defaultMaterial = Resources.Load<Material>("Materials/amaterial1.2") as Material;
     }
 
     void getCubeNumber(int correctAnswer,int secondCorrectAnswer, Collider objectType, int index)
@@ -19,20 +26,34 @@ public class triggerPuzzle : MonoBehaviour {
         int number;
         if (int.TryParse(objectType.gameObject.name, out number))
         {
+            textUpdater.updateText(number, index);
 
             if (number == correctAnswer || number == secondCorrectAnswer)
             {
                 cubes.AddNumber(number, index);
+                //correct number
+                var mats = button.GetComponent<Renderer>().materials;
+                mats[0] = correctMaterial;
+                button.GetComponent<Renderer>().materials = mats;
+            } else
+            {
+                var mats = button.GetComponent<Renderer>().materials;
+                mats[0] = wrongMaterial;
+                button.GetComponent<Renderer>().materials = mats;
             }
         }
     }
 
     void removeCubeNumber(int correctAnswer, int secondCorrectAnswer, Collider objectType, int index)
     {
-
         int number;
         if (int.TryParse(objectType.gameObject.name, out number))
         {
+            textUpdater.updateText(0, index);
+
+            var mats = button.GetComponent<Renderer>().materials;
+            mats[0] = defaultMaterial;
+            button.GetComponent<Renderer>().materials = mats;
 
             if (number == correctAnswer || number == secondCorrectAnswer)
             {

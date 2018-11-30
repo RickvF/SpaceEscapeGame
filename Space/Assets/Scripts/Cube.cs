@@ -8,8 +8,7 @@ public class Cube : MonoBehaviour {
 
     private int solution = 48;
     private int[] collectioncubes;
-    public Text text;
-    
+    public Text text;    public GameObject textUpdater;    
 
     // Use this for initialization
     void Start () {
@@ -41,7 +40,7 @@ public class Cube : MonoBehaviour {
         {
             text.text = "YOU WIN!!";
         }
-    }
+    } 
 
   
 
