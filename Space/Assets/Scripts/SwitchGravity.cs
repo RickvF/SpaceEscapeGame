@@ -5,6 +5,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class SwitchGravity : MonoBehaviour {
 
+    public bool disableGravity;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -20,13 +22,33 @@ public class SwitchGravity : MonoBehaviour {
         if (other.name == "FPSController")
         {
             Debug.Log(other.name);
-            if (other.GetComponent<FirstPersonController>().GetGravity() == 0)
+            Vector3 dir = other.transform.position - transform.position;
+            Debug.Log("Direction: " + dir);
+            if(dir.z > 0)
             {
-                other.GetComponent<FirstPersonController>().SetGravity(2);
-            }
-            else if (other.GetComponent<FirstPersonController>().GetGravity() != 0)
+                if (disableGravity)
+                {
+                    Debug.Log("Turn off");
+                    other.GetComponent<FirstPersonController>().SetGravity(0);
+                }
+                else
+                {
+                    Debug.Log("Turn on");
+                    other.GetComponent<FirstPersonController>().SetGravity(2);
+                }
+                
+            } else
             {
-                other.GetComponent<FirstPersonController>().SetGravity(0);
+                if (disableGravity)
+                {
+                    Debug.Log("Turn on");
+                    other.GetComponent<FirstPersonController>().SetGravity(2);
+                }
+                else
+                {
+                    Debug.Log("Turn off");
+                    other.GetComponent<FirstPersonController>().SetGravity(0);
+                }
             }
         }
 
